@@ -4,5 +4,6 @@
 	$NO = "vas";
 	$VA = "es";
 	$ES = "vv";
+	$ON = "dd";
 ?>
 
