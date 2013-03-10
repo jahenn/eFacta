@@ -3,5 +3,6 @@
 	$YA = "NO";
 	$NO = "vas";
 	$VA = "es";
+	$ES = "vv";
 ?>
 
