@@ -1,0 +1,157 @@
+<head>
+<meta http-equiv="Content-Language" content="es">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Pagina nueva 3</title>
+<style type="text/css">
+body{
+	font-size:8px;
+	margin:3px;
+}
+
+table, td, th{
+	border-collapse:collapse;
+	/*border:1px solid red;*/
+}
+
+.conBorder{
+	border-collapse:collapse;
+	border:1px solid black;
+}
+</style>
+</head>
+
+<body>
+
+<table width="580">
+	<tr>
+		<td width="100" rowspan="6">
+        <img src="@imagen" alt="Logo" style="width:100px; height:100px;"/>
+        </td>
+		<td width="300">Factura Electronica CFDI</td>
+		<td width="180" align="right">Folio Fiscal: </td>
+	</tr>
+    
+	<tr>
+		<td width="300">Nombre / Razon Social: @empresa</td>
+		<td width="180" align="right">@uuid</td>
+	</tr>
+    
+	<tr>
+		<td width="300">RFC: @rfc</td>
+		<td width="180" align="right">No. de Serie del Certificado CSD:</td>
+	</tr>
+	<tr>
+		<td width="300">Domicilio: @domicilio</td>
+		<td width="180" align="right">@certificado</td>
+	</tr>
+	<tr>
+		<td width="300">Regimen: @Regimen</td>
+		<td width="180" align="right">Lugar y Fecha de Emision:</td>
+	</tr>
+	<tr>
+		<td width="480"  colspan="2" align="right">@lugarFecha</td>
+	</tr>
+	<tr>
+		<td width="580" height="163" colspan="3">
+		<table border="0" width="100%">
+			<tr>
+				<td>Datos del Receptor:</td>
+			</tr>
+			<tr>
+				<td>Nombre / Razon Social: @cNombre</td>
+			</tr>
+			<tr>
+				<td>RFC: @cRFC</td>
+			</tr>
+			<tr>
+				<td>Domicilio: @cDomicilio</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+		<table width="580">
+			<tr>
+				<td class="conBorder" width="60">Cantidad</td>
+				<td class="conBorder" width="60">unidad</td>
+				<td class="conBorder" width="60">Clave</td>
+				<td class="conBorder" width="260">Descripcion</td>
+				<td class="conBorder" width="65">Precio Unitario</td>
+				<td class="conBorder" width="65">Importe</td>
+			</tr>
+            
+			@articulos
+            
+			<tr>
+				<td class="conBorder" width="440" colspan="4">Total Con Letra</td>
+				<td class="conBorder" width="65">SubTotal</td>
+				<td class="conBorder" width="65">$ @subtotal</td>
+			</tr>
+			<tr>
+				<td width="440" colspan="4" class="conBorder">
+				<p align="right">@letras</td>
+				<td class="conBorder" width="65">Iva</td>
+				<td class="conBorder" width="65">$ @iva</td>
+			</tr>
+			<tr>
+				<td width="440" colspan="4">&nbsp;</td>
+				<td class="conBorder" width="65">ISR Ret.</td>
+				<td class="conBorder" width="65">$ @risr</td>
+			</tr>
+			<tr>
+				<td width="170" colspan="3">Pago en una sola Exhibicion</td>
+				<td width="270">Metodo De Pago: @efectivo</td>
+				<td class="conBorder" width="65">IVA Ret.</td>
+				<td class="conBorder" width="65">$ @riva</td>
+			</tr>
+			<tr>
+				<td width="440" colspan="4">&nbsp;</td>
+				<td class="conBorder" width="65">Total</td>
+				<td class="conBorder" width="65">$ @total</td>
+			</tr>
+            
+			<tr>
+				<td width="570" colspan="6">Sello Digital del CFDI</td>
+			</tr>
+            <tr>
+				<td width="570" colspan="6">@sello</td>
+			</tr>
+			<tr>
+				<td width="570" colspan="6">Sello del SAT:</td>
+			</tr>
+			<tr>
+				<td width="570" colspan="6">@selloSAT</td>
+			</tr>
+			<tr>
+				<td width="110" colspan="2" rowspan="4">
+                <img src="@qr" style="width:2.75cm; height:2.75cm;" />
+                </td>
+				<td width="450" colspan="4">Cadena Original del Complemento de 
+				Certificacion digital del SAT.</td>
+			</tr>
+			<tr>
+				<td width="450" colspan="4" style="font-size:6px;">
+				@cadena
+                </td>
+			</tr>
+			<tr>
+				<td width="450" colspan="4">No. De serie del Certificado del 
+				SAT:@certSAT</td>
+			</tr>
+			<tr>
+				<td width="450" colspan="4">Fecha y Hora de Certificacion: 
+				@fechiaSAT</td>
+			</tr>
+            
+		</table>
+	</tr>
+	<tr>
+    	
+		<td width="580" height="32" colspan="3">Este documento es una 
+		representación impresa de un CFDI</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

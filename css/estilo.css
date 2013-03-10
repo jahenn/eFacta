@@ -1,0 +1,58 @@
+/* CSS Document */
+h1{
+	color:#fff;
+}
+body{
+	background-color:#ff9600;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:14px;
+}
+.k-content{
+	background-color:#ff9600;
+}
+.logoHeader{
+	background-color:#ff9600;
+}
+.listForm li, .listForm lo{
+	margin-right: 10px;
+	margin-left:	10px;
+	margin-bottom:10px;
+	list-style: none;
+	float: left;
+}
+.k-block{
+	margin-top:10px;
+	padding-top:10px;
+	padding-bottom:30px;
+}
+.width-100{
+	width:100px;
+}
+.width-200{
+	width:200px;	
+}
+.width-300{
+	width:300px;	
+}
+.width-600{
+	width:600px;
+}
+input[type="text"]{
+	font-size:14px;
+}
+a{
+	color:#F60;
+}
+.receptor-Content{
+	overflow:hidden;
+	width:100%;
+}
+p{
+	height:4px;
+}
+.alignRight{
+	text-align:right;
+}
+.padding-20{
+	padding:20px;
+}
