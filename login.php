@@ -46,7 +46,7 @@ $(document).ready(function(e) {
 		if($("#txtPassword").val().length <=0){
 			$("#txtPassword").hide();
 			$("#fakePassword").show();
-			$("#fakePassword").Watermark("Passwordxxx");
+			$("#fakePassword").Watermark("Passwordx");
 		}
 	});
 });
