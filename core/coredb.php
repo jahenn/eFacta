@@ -2,9 +2,12 @@
 
 
 class data{
+	private $_SITE_ROOT;
 	private $conn = null;
 	function __construct(){
-		$this->conn = pg_connect("dbname=dbname user=user password=password host=host");
+		$this->_SITE_ROOT = $_SERVER["DOCUMENT_ROOT"]."/eFacta/";
+		include($this->_SITE_ROOT."config.php");
+		$this->conn = pg_connect("dbname=$_DB_NAME user=$_DB_USER password=$_DB_PSWD host=$_DB_HOST");
 	}
 	function creaEmpresa($rfc, $pass){
 		$result = pg_select($this->conn,"empresas",array("rfc"=>$rfc));
