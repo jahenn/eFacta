@@ -9,74 +9,95 @@ if(isset($_POST['send'])){
 	@session_destroy();
 }
 ?>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js Background-Naranja"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<script src="kendoui/js/jquery.min.js"></script>
-<script src="kendoui/js/kendo.web.min.js"></script>
-<script src="jquery.watermarkinput.js"></script>
-<link href="kendoui/styles/kendo.common.min.css" rel="stylesheet" />
-<link href="kendoui/styles/kendo.default.min.css" rel="stylesheet" />
-<style>
-body{
-	background-color:#ff9600;
-	font-family:Verdana, Geneva, sans-serif;
-}
-.contents{
-	margin-top:100px;
-	margin-left:auto;
-	margin-right:auto;
-	width:500px;
-}
-input{
-	width:280;
-}
-.k-textbox{
-	width:280px;
-}
-</style>
-<script>
-$(document).ready(function(e) {
-	$("#txtPassword").hide();
-    $("#txtUser").Watermark("User RFC");
-	$("#fakePassword").Watermark("Password");
-	$("#txtPassword").focusout(function(e){
-		if($("#txtPassword").val().length <=0){
-			$("#txtPassword").hide();
-			$("#fakePassword").show();
-			$("#fakePassword").Watermark("Passwordx");
-		}
-	});
-});
-function setPasswordType(clear){
-	$("#fakePassword").hide();
-	$("#txtPassword").show();
-	$("#txtPassword").focus();
-}
-</script>
-</head>
-<body>
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
 
-<div class=" k-block contents">
-<table>
-<tr>
-<td><img src="images/logo.jpg" width="200"></td>
-<td>
-<form action="" method="post">
-<input type="text" name="txtUser" required="required" id="txtUser" class="k-textbox" />
-<input type="password" name="txtPassword" required="required" id="txtPassword" class="k-textbox" />
-<input type="text" id="fakePassword" class="k-textbox" onFocus="setPasswordType();" />
-<input type="submit" value="Entrar" class="k-button" onclick="$.Watermark.HideAll(); setPasswordType();"  name="send"/>
-</form>
-</td>
-</tr>
-</table>
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
-</div>
-<div style="text-align:center;">
-<a href="#nueva" onclick="location.href='nuevaEmpresa.html'">Registra Tu Empresa</a>
-</div>
-</body>
+        <script src="kendoui/js/jquery.min.js"></script>
+        <script src="kendoui/js/kendo.web.min.js"></script>
+        <link href="kendoui/styles/kendo.common.min.css" rel="stylesheet" />
+        <link href="kendoui/styles/kendo.default.min.css" rel="stylesheet" />
+
+        <script type="text/javascript">
+        var visiblePass = false;
+        	$(document).ready(function() {
+                // Stuff to do as soon as the DOM is ready;
+                $(".resetPasswd").hide("fast",function(){
+                    $(".resetPasswd").css("width","450px");
+                    $(".resetPasswd").css("margin","auto");
+                    $(".resetPasswd").css("background","#ccc");
+                    $(".resetPasswd").css("padding","10px");
+                    visiblePass = false;
+                });
+                //resetPasswd();
+            });
+        	function resetPasswd(){
+                if(visiblePass){
+                    $(".resetPasswd").hide("fast", function(){
+                        visiblePass = false;
+                    })
+                }else{
+                    $(".resetPasswd").show("fast",function(){
+                    visiblePass = true;
+                });
+                }
+        	}
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="main-container">
+            <div class="main wrapper clearfix">
+                <div class="clearfix logo-container">
+                    <img class="floats" src="img/logo.png">
+                    <div class="floats">
+                        <form action="" method="post">
+                            <label>ID Usuario (RFC):</label>
+                            <p>
+                                <input name="txtUser" class="k-textbox" type="text">
+                            </p>
+                            <label>Contraseña de acceso:</label>
+                            <p>
+                                <input name="txtPassword" class="k-textbox" type="password">
+                            </p>
+                            <p>
+                                <img src="img/plus_orange.png" title="Agregar Empresa" id="plus_btn" class="k-button">
+                                <input class="k-button" type="submit" name="send" value="Ingresar" title="Iniciar Sesion">
+                            </p>
+                            <a href="#" onclick="resetPasswd();">Recuperar Contraseña</a>
+                            
+                        </form>
+                    </div>
+                </div>
+                <div class="resetPasswd">
+                    <p>
+                        <h2>Recuperacion de Contraseña</h2>
+                    </p>
+                    <form action="" method="post" id="formReset">
+                        <label>@e-mail:</label>
+                        <input class="k-textbox" type="text" name="txtEmail">
+                        <input class="k-button" type="submit" name="resetPasswd" value="Enviar @e-mail">
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
