@@ -7,9 +7,11 @@ class EnLetras
   var $Dot = ".";
   var $Zero = "0";
   var $Neg = "Menos";
-  
+  var $Denominaciones = array("MXN"=>"Pesos","USD"=>"Dolares");
 function ValorEnLetras($x, $Moneda ) 
 {
+    $Simbol = $Moneda;
+    $Moneda = $this->Denominaciones[$Moneda];
     $s="";
     $Ent="";
     $Frc="";
@@ -60,7 +62,7 @@ function ValorEnLetras($x, $Moneda )
        $s = $s . " Con " . $this->SubValLetra(intval($Frc)) . "Centavos";
        //$s = $s . " " . $Frc . "/100";
     }
-    return ($Signo . $s . " M.N.");
+    return ($Signo.$s." ".$Simbol.".");
    
 }
 

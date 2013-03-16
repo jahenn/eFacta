@@ -13,7 +13,6 @@ require_once("letras.php");
 $datos = json_encode($_SESSION);
 $datos = json_decode($datos);
 $integrador = "6da8d0d2-cce2-43a5-ae9a-9e739ca5a46f";
-
 if($_SESSION['facta'] == 'AAA010101AAA'){
 	$integrador = "2b3a8764-d586-4543-9b7e-82834443f219";
 }
@@ -162,7 +161,7 @@ $template = str_replace("@certSAT",$timbre['certificado'],$template);
 $template = str_replace("@fechiaSAT",$timbre['fechaSAT'],$template);
 
 $enletra = new EnLetras;
-$letra = $enletra->ValorEnLetras($datos->documento->total,"Pesos");
+$letra = $enletra->ValorEnLetras($datos->documento->total,$datos->documento->comboMoneda);
 
 $template = str_replace("@letras",$letra,$template);
 
