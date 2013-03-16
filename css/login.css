@@ -50,7 +50,6 @@ p{
 }
 #formReset input{
     display: inline-block;
-    border:1px solid red;
     width: 200px;
 }
 .resetPasswd label{

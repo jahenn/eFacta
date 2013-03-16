@@ -40,11 +40,13 @@ if(isset($_POST['send'])){
                 $(".resetPasswd").hide("fast",function(){
                     $(".resetPasswd").css("width","450px");
                     $(".resetPasswd").css("margin","auto");
-                    $(".resetPasswd").css("background","#ccc");
+                    $(".resetPasswd").css("background","#ddd");
                     $(".resetPasswd").css("padding","10px");
                     visiblePass = false;
                 });
-                //resetPasswd();
+                $("#plus_btn").click(function(){
+                    window.location.href = "http://localhost/eFacta/nuevaEmpresa.html";
+                });              //resetPasswd();
             });
         	function resetPasswd(){
                 if(visiblePass){
@@ -95,7 +97,7 @@ if(isset($_POST['send'])){
                         <input class="k-textbox" type="text" name="txtEmail">
                         <input class="k-button" type="submit" name="resetPasswd" value="Enviar @e-mail">
                     </form>
-                    
+                    <span>Si no cuenta con esta info, contacte a su administrador.</span>
                 </div>
             </div>
         </div>
