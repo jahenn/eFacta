@@ -55,7 +55,7 @@ if(isset($_POST['send'])){
                     })
                 }else{
                     $(".resetPasswd").show("fast",function(){
-                    visiblePass = true;
+                    visiblePass = true; // true
                 });
                 }
         	}
