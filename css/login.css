@@ -1,0 +1,64 @@
+a:link{
+    text-decoration: none;
+    color: #404040;
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+}
+input[type="text"],input[type="password"]{
+    font-size: 1.2em;
+    width: 250px;
+}
+input[type="submit"]{
+    border-left: none;
+    font-size: 1.2em;
+    width: 204px;
+}
+label{
+    color: #404040;
+    font-family: verdana;
+    font-weight: bold;
+    font-size: 20px;
+}
+p{
+    margin-top: 5px;
+}
+.main{
+    background: #ddd;
+    bottom: 0;
+    height: 300px;
+    left: 0;
+    margin: auto;
+    padding: 0px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+.logo-container{
+    margin: auto;
+    padding: 20px;
+    width: 600px;
+}
+.floats{
+    display: inline-block;
+    float: left;
+    padding-left: 10px;
+}
+#formReset input{
+    display: inline-block;
+    border:1px solid red;
+    width: 200px;
+}
+.resetPasswd label{
+    display: block;
+    width: 100px;
+}
+#plus_btn{
+    width: 50px;
+    height: 36.2px;
+    margin-right: -8px;
+}
